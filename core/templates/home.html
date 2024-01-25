@@ -1,0 +1,40 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<!-- meta tags -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<title>Heart Disease Predictor</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<style>
+.ok{
+	color: blue;
+	font-size: 30px;
+}
+</style>
+
+<body>
+<br></br>
+<div class="container">
+	<div class="card-body">
+	<h5 class="card-title text-muted text-uppercase text-center">
+		<strong class="ok"> College Project </strong><br> HEART DISEASES PREDICTION
+	</h5>
+	<a href="{% url 'heart' %}" class="btn btn-block btn-danger text-uppercase">KNOW HEART HEALTH STATUS</a>
+	</div>
+</div>
+</section>
+</body>
+
+</html>

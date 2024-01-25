@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+	.ok{
+		color: green;
+		font-size: 50px;
+	}
+</style>
+
+<div class="container">
+	<div class="display-4 my-2 text-center"><strong class="ok"> College Project </strong> <br> Heart Disease Prediction</div>
+	<hr />
+
+	predicted_value = -5
+
+	<div class="col-md-4">
+		<form class="" method="POST" action="{% url 'heart' %}">
+			{% csrf_token %}
+			
+            <div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="text" class="form-control" id="age" name="age" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sex">Sex:</label>
+                    <input type="text" class="form-control" id="sex" name="sex" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="cp">CP:</label>
+                    <input type="text" class="form-control" id="cp" name="cp" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="trestbps">trestbps:</label>
+                    <input type="text" class="form-control" id="trestbps" name="trestbps" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="chol">Age:</label>
+                    <input type="text" class="form-control" id="chol" name="chol" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fbs">fbs:</label>
+                    <input type="text" class="form-control" id="fbs" name="fbs" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="restecg">restecg:</label>
+                    <input type="text" class="form-control" id="restecg" name="restecg" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="thalach">thalach:</label>
+                    <input type="text" class="form-control" id="thalach" name="thalach" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="exang">exang:</label>
+                    <input type="text" class="form-control" id="exang" name="exang" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="oldpeak">oldpeak:</label>
+                    <input type="text" class="form-control" id="oldpeak" name="oldpeak" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="slope">slope:</label>
+                    <input type="text" class="form-control" id="slope" name="slope" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ca">ca:</label>
+                    <input type="text" class="form-control" id="ca" name="ca" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="thal">thal:</label>
+                    <input type="text" class="form-control" id="thal" name="thal" required>
+                </div>
+                
+            </div>
+            
+
+			<div class="mt-4">
+				<button type="submit" class="btn-lg btn-block btn btn-outline-danger mb-5">
+					Submit
+				</button>
+			</div>
+		</form>
+	</div>
+    {% if predicted_value %}
+	<div class="h1 my-2 text-center">
+		You {{ predicted_value }} heart disease.
+	</div>
+	{% endif %}
+</div>
+
+{% endblock %}

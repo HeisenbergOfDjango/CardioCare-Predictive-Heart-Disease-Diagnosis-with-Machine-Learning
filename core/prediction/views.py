@@ -6,6 +6,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 
 from .models import HeartDisease
+#aditya just testing something
 
 # Create your views here.
 

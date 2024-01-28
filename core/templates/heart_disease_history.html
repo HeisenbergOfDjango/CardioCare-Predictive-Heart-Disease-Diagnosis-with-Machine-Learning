@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease History</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 8px 12px;
+            background-color: #4285f4;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .predicted-0 {
+            border-color: #ff9999; /* Light red */
+        }
+
+        .predicted-1 {
+            border-color: #99ff99; /* Light green */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="mt-4">Heart Disease History</h1>
+
+        <form method="get" action="{% url 'heart_disease_history' %}" class="mb-4">
+            <label for="search">Search by Name:</label>
+            <input type="text" name="search" value="{{ search_query }}" class="form-control">
+            <button type="submit" class="btn btn-primary mt-2">Search</button>
+        </form>
+
+        {% for record in history_records %}
+            <div class="card predicted-{{ record.predicted_value }}">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {% if record.name %}
+                            {{ record.name }}
+                        {% else %}
+                            No Name
+                        {% endif %}
+                    </h5>
+                    <p class="card-text">
+                        <strong>Age:</strong> {{ record.age }}<br>
+                        <strong>Date:</strong> {{ record.date }}<br>
+                    </p>
+                </div>
+            </div>
+        {% empty %}
+            <p>No records found.</p>
+        {% endfor %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

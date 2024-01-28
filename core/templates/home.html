@@ -4,37 +4,77 @@
 <html lang="en">
 
 <head>
+    <!-- meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-<!-- meta tags -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-<title>Heart Disease Predictor</title>
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <title>Heart Disease Predictor</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <style>
-.ok{
-	color: blue;
-	font-size: 30px;
-}
+	body {
+		background: linear-gradient(to right, #3498db, #2ecc71);
+		font-family: 'Arial', sans-serif;
+		color: #fff;
+	}
+
+	.container {
+		padding: 50px;
+		text-align: center;
+	}
+
+	.card-body {
+		background: linear-gradient(to right, #2980b9, #27ae60);
+		border-radius: 10px;
+		padding: 30px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	.ok {
+		color: #fff;
+		font-size: 30px;
+	}
+
+	.btn-block {
+		margin-top: 20px;
+	}
+
+	.card-title {
+		color: #fff;
+	}
+
+	.btn-danger {
+		background: linear-gradient(to right, #e74c3c, #c0392b);
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		padding: 15px;
+	}
+
+	.btn-danger:hover {
+		background: linear-gradient(to right, #c0392b, #e74c3c);
+	}
 </style>
 
 <body>
-<br></br>
-<div class="container">
-	<div class="card-body">
-	<h5 class="card-title text-muted text-uppercase text-center">
-		<strong class="ok"> College Project </strong><br> HEART DISEASES PREDICTION
-	</h5>
-	<a href="{% url 'heart' %}" class="btn btn-block btn-danger text-uppercase">KNOW HEART HEALTH STATUS</a>
-	</div>
-</div>
-</section>
+
+    <div class="container">
+        <div class="card-body">
+            <h5 class="card-title text-uppercase">
+                <strong class="ok"> College Project </strong><br> HEART DISEASES PREDICTION
+            </h5>
+            <a href="{% url 'heart' %}" class="btn btn-block btn-danger text-uppercase">KNOW HEART HEALTH STATUS</a>
+            <br>
+            <a href="{% url 'heart_disease_history' %}" class="btn btn-block btn-danger text-uppercase">History Page</a>
+            <br>
+            <a href="https://www.linkedin.com/in/aditya1409/" target="_blank" class="btn btn-block btn-danger text-uppercase">About</a>
+        </div>
+    </div>
+
 </body>
 
 </html>

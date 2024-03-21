@@ -1,4 +1,4 @@
-# Heart-Disease-Prediction
+# CardioCare: Predictive Heart Disease Diagnosis with Machine Learning
 Cardiovascular diseases remain a leading cause of mortality worldwide, emphasizing the critical need for accurate and timely diagnosis. In response to this challenge, we present CardioCare, a cutting-edge Django-based project integrating machine learning algorithms to predict heart disease risk with high precision. By leveraging advanced data analytics techniques, CardioCare empowers healthcare professionals and individuals alike to make informed decisions regarding cardiovascular health.
 
 
